@@ -11,7 +11,7 @@ import { AuthData, USER, _login } from './auth-data.model';
 
 export class AuthService {
 
-  private newUrl = environment.apiUrl + "/c-auth/user";
+  private newUrl = `${environment.apiUrl}/c-auth/user`
   private nurl='https://jsonplaceholder.typicode.com/todos';
   constructor(private http: HttpClient) { }
 
