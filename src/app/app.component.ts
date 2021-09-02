@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   title = 'project';
   id;
   data1;
-constructor(private router: Router,private _autService: AuthService){
+constructor(private router: Router
+  ,private _autService: AuthService
+  ){
 
 }
   ngOnInit(){  }
