@@ -16,13 +16,9 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { SignupComponent } from './auth/signup/signup.component';
-// import { AdminComponent } from './pages/admin/admin.component';
-// import { CustomersComponent } from './pages/customers/customers.component';
-// import { ConfirmedBookingsComponent } from './pages/confirmed-bookings/confirmed-bookings.component';
-// import { CancelledTicketsComponent } from './pages/cancelled-tickets/cancelled-tickets.component';
-// import { RefundsComponent } from './pages/refunds/refunds.component';
-// import { SettingComponent } from './pages/setting/setting.component';
-// import { DynamicTableComponent } from './utils/shared/dynamic-table/dynamic-table.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,14 +28,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     ForgotPasswordComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    SignupComponent,
-    // AdminComponent,
-    // CustomersComponent,
-    // ConfirmedBookingsComponent,
-    // CancelledTicketsComponent,
-    // RefundsComponent,
-    // SettingComponent,
-    // DynamicTableComponent
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +40,9 @@ import { SignupComponent } from './auth/signup/signup.component';
     MatInputModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // Only required for database features
   ],
   providers: [],
   bootstrap: [AppComponent]
