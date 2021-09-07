@@ -5,16 +5,21 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { ListUserComponent } from './user/list-user/list-user.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
-  // {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'first-login', component:FirstLoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'forgot-password', component:ForgotPasswordComponent},
   {path:'reset-password', component:ResetPasswordComponent},
-  // {path:'signup', component:SignupComponent}
+  { path: 'create', component: CreateUserComponent },
+    { path: 'list-users', component: ListUserComponent },
+    { path: 'update-user/:id', component: EditUserComponent },
+  
   {
     path:"dashboard",
     loadChildren:() =>
@@ -60,11 +65,11 @@ const routes: Routes = [
     loadChildren:()=>
     import("./pages/setting/setting.module").then(mod => mod.SettingModule)
   },
-  {
-    path:'user',
-    loadChildren:()=>
-    import("./user/user.model").then(mod =>mod.UserModule)
-  }
+  // {
+  //   path:'create',
+  //   loadChildren:()=>
+  //   import ('./user/user.module').then(mod => mod.UserModule)
+  // }
 
 ]
 

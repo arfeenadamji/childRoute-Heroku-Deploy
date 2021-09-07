@@ -19,6 +19,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { UserModule } from './user/user.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,14 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     FirstLoginComponent,
     ForgotPasswordComponent,
-    RegisterComponent,
+  RegisterComponent,
     ResetPasswordComponent,
     SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
