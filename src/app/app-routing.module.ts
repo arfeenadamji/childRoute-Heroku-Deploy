@@ -5,6 +5,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ListUserComponent } from './user/list-user/list-user.component';
@@ -12,11 +13,14 @@ import { ListUserComponent } from './user/list-user/list-user.component';
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
-  {path:'first-login', component:FirstLoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'forgot-password', component:ForgotPasswordComponent},
+  {path:'verify-email', component:VerifyEmailComponent},
+  
+  {path:'first-login', component:FirstLoginComponent},
   {path:'reset-password', component:ResetPasswordComponent},
-  { path: 'create', component: CreateUserComponent },
+  
+    {path: 'create', component: CreateUserComponent },
     { path: 'list-users', component: ListUserComponent },
     { path: 'update-user/:id', component: EditUserComponent },
   
