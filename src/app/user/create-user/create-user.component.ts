@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
@@ -10,7 +10,15 @@ import { UserService } from '../user.service';
 })
 export class CreateUserComponent implements OnInit {
 public userForm: FormGroup;
-  constructor(public userService: UserService, public formBuilder:FormBuilder, public router: Router) { 
+userService:UserService;
+router: Router;
+formBuilder:FormBuilder;
+
+  constructor(injector:Injector) { 
+    this.userService = injector.get(UserService);
+    this.router = injector.get(Router);
+    this.formBuilder = injector.get(FormBuilder);
+
     this.userForm = this.formBuilder.group({
       name:[''],
       email:[''],
@@ -24,5 +32,6 @@ public userForm: FormGroup;
     onSubmit(){
       this.userService.createUser(this.userForm.value);
       this.router.navigate(['list-users']);
+      console.log("userForm.value",this.userForm.value);
     }
 }

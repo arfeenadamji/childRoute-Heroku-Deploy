@@ -14,9 +14,8 @@
         <td>{{ user.email }}</td>
         <td>{{ user.contact }}</td>
         <td>
-          <span (click)="removeUser(user)" class="text-danger">Delete</span> &nbsp;
-          <!-- <span routerLink="[/update-user , user.id]" class="text-primary">Edit</span> -->
-          <span routerLink="['/update-user', user.id]" class="text-primary">Edit</span>
+          <span style="cursor: pointer;"(click)="removeUser(user)" class="text-danger">Delete</span> &nbsp;
+          <span style="cursor: pointer;" routerLink="/update-user/{{user.id}}" class="text-primary">Edit</span>
         </td>
       </tr>
     </tbody>

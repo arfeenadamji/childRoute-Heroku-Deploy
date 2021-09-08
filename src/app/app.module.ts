@@ -18,9 +18,9 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { SignupComponent } from './auth/signup/signup.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { UserModule } from './user/user.module';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // Only required for database features
+    AngularFireStorageModule // Only required for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]

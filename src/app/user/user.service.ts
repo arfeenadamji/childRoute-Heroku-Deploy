@@ -10,21 +10,21 @@ export class UserService {
 
   getUserDoc(id) {
     return this.angularFirestore
-    .collection('user-collection')
+    .collection('users')
     .doc(id)
     .valueChanges()
   }
 
   getUserList() { 
     return this.angularFirestore
-    .collection("user-collection")
+    .collection("users")
     .snapshotChanges();
   }
 
   createUser(user: User) {
     return new Promise<any>((resolve, reject) =>{
       this.angularFirestore
-        .collection("user-collection")
+        .collection("users")
         .add(user)
         .then(response => { console.log(response) }, error => reject(error));
     });
@@ -32,14 +32,14 @@ export class UserService {
 
   deleteUser(user) {
     return this.angularFirestore
-      .collection("user-collection")
+      .collection("users")
       .doc(user.id)
       .delete();
   }
   
   updateUser(user: User, id) {
     return this.angularFirestore
-      .collection("user-collection")
+      .collection("users")
       .doc(id)
       .update({
         name: user.name,
