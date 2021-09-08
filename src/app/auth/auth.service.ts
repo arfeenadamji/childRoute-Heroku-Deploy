@@ -21,9 +21,9 @@ export class AuthService {
   }
 login1(): Observable<_login>{
   // const authData: AuthData = { username, password, ...(newPassword) && { newPassword } };
-  const URL = this.newUrl + "/c-auth/user/login"
+  // const URL = this.newUrl + "/c-auth/user/login"
   // const URL = `${this.newUrl}/$c-auth/$user/$login`;
-  return this.http.get<_login>(URL);
+  return this.http.get<_login>(this.newUrl);
 }
 
 login12(username:string, password:string, newPassword?){
