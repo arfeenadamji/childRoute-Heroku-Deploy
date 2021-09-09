@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { FirstLoginComponent } from './auth/first-login/first-login.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -20,9 +21,11 @@ const routes: Routes = [
   {path:'first-login', component:FirstLoginComponent},
   {path:'reset-password', component:ResetPasswordComponent},
   
-    {path: 'create', component: CreateUserComponent },
+    {path: 'create', component: CreateUserComponent, canActivate: [AuthGuard] },
     { path: 'list-users', component: ListUserComponent },
     { path: 'update-user/:id', component: EditUserComponent },
+    { path: '**', component: LoginComponent },                       // catch-all in case no other path matched
+
   
   {
     path:"dashboard",

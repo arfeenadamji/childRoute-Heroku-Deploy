@@ -10,6 +10,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -49,6 +50,7 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule
